@@ -13,3 +13,4 @@ from . import subscription_inspection_report
 from . import subscription_process
 from . import res_company
 from . import sale_subscription_stage
+from . import sale_subscription_month

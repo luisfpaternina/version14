@@ -266,105 +266,73 @@ class SaleSuscriptionInherit(models.Model):
     def _recurring_create_invoice(self):
         res = super(SaleSuscriptionInherit, self)._recurring_create_invoice()
         for record in self:
-            month_exclude = False
+            recurring_interval = record.template_id.recurring_interval
             #active_cron = record._active_cron_invoice(active_cron)
             if record.template_id.exclude_months == True:
                 #if active_cron == True:
                 #    date_today = datetime.now().month
                 #else:
-                date_today = record.recurring_next_date.month
-    
-                if date_today == 1 and record.template_id.jan == True:
-                    month_exclude = True
-                elif date_today == 2 and record.template_id.feb == True:
-                    month_exclude = True
-                elif date_today == 3 and record.template_id.mar == True:
-                    month_exclude = True
-                elif date_today == 4 and record.template_id.apr == True:
-                    month_exclude = True
-                elif date_today == 5 and record.template_id.may == True:
-                    month_exclude = True
-                elif date_today == 6 and record.template_id.jun == True:
-                    month_exclude = True
-                elif date_today == 7 and record.template_id.jul == True:
-                    month_exclude = True
-                elif date_today == 8 and record.template_id.aug == True:
-                    month_exclude = True
-                elif date_today == 9 and record.template_id.sep == True:
-                    month_exclude = True
-                elif date_today == 10 and record.template_id.oct == True:
-                    month_exclude = True
-                elif date_today == 11 and record.template_id.nov == True:
-                    month_exclude = True
-                elif date_today == 12 and record.template_id.dec == True:
-                    month_exclude = True
-                
-                if month_exclude == True:
-                    print('test')
-                    #res.amount_untaxed = 0.0
-                    #res.amount_untaxed_signed = 0.0
-                    res.amount_by_group = False
-                    #res.amount_total = 0.0
-                    total = 0
-                    if res.invoice_line_ids:
+                date_today = datetime.now().month
+                period = 1
+                months_number = []
+                period_number = []
+                months = range(12)
+                c = 1
+                for m in months:
+                    months_number.append(m+1)
+                    if c > recurring_interval:
+                        period += 1
+                        c=1
+                    period_number.append(period)
+
+                    c += 1
+
+                tuple_months = dict(zip(months_number, period_number))
+
+                for t in tuple_months:
+                    if date_today == t:
+                        p = tuple_months[t]
+                        m = 0
+                        tuple_m = []
+                        for t_1 in tuple_months:
+                            if p == tuple_months[t_1]:
+                                tuple_m.append([t_1,tuple_months[t_1]])
+
+
+                        if tuple_m:
+                            m = []
+                            for t in tuple_m:
+                                for monthn_check in record.template_id.subscription_month_ids:
+                                    if t[0] == monthn_check.code:
+                                        m.append(t)
+
+                if res.invoice_line_ids:
                         for line in res.invoice_line_ids:
-                            total = line.price_subtotal
+                            total = line.price_unit
                         
                         free_month_product =self.env.ref(
                         'sat_companies_sale_suscription.free_month_product_service'
                         )
                         line_last_product = res.invoice_line_ids[-1]
+                        vals_lines = []
+                        for t in m:
+                            month_name = self.env['sale.subscription.month'].search([('code','=',str(t[0]))],limit=1)
+                            vals_line = (0,0,{
+                                    'name': 'Descuento total por mes'+' '+month_name.name,
+                                    'product_id': free_month_product.id,
+                                    'tax_ids': line_last_product.tax_ids.ids,
+                                    'price_unit': -total,
+                                    'quantity': 1,
+                                })
+                            vals_lines.append(vals_line)
+                            
                         vals = {
                                 'product_id': record.product_id.id,
                                 'task_user_id': record.task_user_id.id,
                                 'sale_type_id': record.sale_type_id.id,
                                 'gadgets_contract_type_id': record.gadgest_contract_type_id.id,
-                                'invoice_line_ids': [(0, 0, {
-                                    'name': 'Descuento total por mes',
-                                    'product_id': free_month_product.id,
-                                    'tax_ids': line_last_product.tax_ids.ids,
-                                    'price_unit': -total,
-                                    'quantity': 1,
-                                    })]
-                                    }
+                                'invoice_line_ids': vals_lines,
+                                }
                         res.write(vals)
-                    else:
-                        vals = {
-                            'product_id': record.product_id.id,
-                            'task_user_id': record.task_user_id.id,
-                            'sale_type_id': record.sale_type_id.id,
-                            'gadgets_contract_type_id': record.gadgest_contract_type_id.id,
-                            }
-                        res.write(vals)
-                else:
-                    vals = {
-                            'product_id': record.product_id.id,
-                            'task_user_id': record.task_user_id.id,
-                            'sale_type_id': record.sale_type_id.id,
-                            'gadgets_contract_type_id': record.gadgest_contract_type_id.id,
-                            }
-                    res.write(vals)
-                        #line.amount_currency = 0.0
-                        #line.price_unit = 0.0
-                        #line.discount = 100
-                        #line.recompute_tax_line = True
-                        #line._onchange_mark_recompute_taxes()
-                        #line.tax_ids = False
-                        #res._compute_base_line_taxes(line)
-
-                    #res._compute_invoice_taxes_by_group()
-                    #res._onchange_invoice_line_ids()
-                        #break
-                    #res._recompute_dynamic_lines(recompute_all_taxes=True, recompute_tax_base_amount=True)
-                    #res._recompute_tax_lines(recompute_tax_base_amount=False)
-            else:
-                vals = {
-                        'product_id': record.product_id.id,
-                        'task_user_id': record.task_user_id.id,
-                        'sale_type_id': record.sale_type_id.id,
-                        'gadgets_contract_type_id': record.gadgest_contract_type_id.id,
-                        }
-                res.write(vals)
-            active_cron = False
 
         return res

@@ -17,18 +17,15 @@
 
             <xpath expr="//form/sheet/notebook/page/group[1]/group[2]/group[1]/field[@name='code']" position="after">
                 <field name="exclude_months"/>
-                <field name="jan" attrs="{'invisible': [('exclude_months', '=', False)]}"/>
-                <field name="feb" attrs="{'invisible': [('exclude_months', '=', False)]}"/>
-                <field name="mar" attrs="{'invisible': [('exclude_months', '=', False)]}"/>
-                <field name="apr" attrs="{'invisible': [('exclude_months', '=', False)]}"/>
-                <field name="may" attrs="{'invisible': [('exclude_months', '=', False)]}"/>
-                <field name="jun" attrs="{'invisible': [('exclude_months', '=', False)]}"/>
-                <field name="jul" attrs="{'invisible': [('exclude_months', '=', False)]}"/>
-                <field name="aug" attrs="{'invisible': [('exclude_months', '=', False)]}"/>
-                <field name="sep" attrs="{'invisible': [('exclude_months', '=', False)]}"/>
-                <field name="oct" attrs="{'invisible': [('exclude_months', '=', False)]}"/>
-                <field name="nov" attrs="{'invisible': [('exclude_months', '=', False)]}"/>
-                <field name="dec" attrs="{'invisible': [('exclude_months', '=', False)]}"/>
+            </xpath>
+            <xpath expr="//form/sheet/notebook[1]/page[1]/group[1]" position="after">
+                <notebook attrs="{'invisible': [('exclude_months', '=', False)]}">
+                    <page string='Free Months'>
+                        <group>
+                            <field name="subscription_month_ids"/>
+                        </group>
+                    </page>
+                </notebook>
             </xpath>
 
         </field>

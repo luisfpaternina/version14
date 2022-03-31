@@ -14,6 +14,8 @@ class SaleSuscriptionTemplateInherit(models.Model):
     gadgets_contract_type_id = fields.Many2one(
         'stock.gadgets.contract.type')
 
+    subscription_month_ids = fields.Many2many('sale.subscription.month')
+
     """
     sale_order_template_id = fields.Many2one(
         'sale.order.template', 'Quotation Template',

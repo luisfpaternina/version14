@@ -43,6 +43,7 @@
         'views/sale_subscription.xml',
         'views/sale_order_view.xml',
         'views/res_partner.xml',
+        'data/sale.subscription.month.csv',
         'views/sale_subscription_demand.xml',
         'views/subscription_reason_change.xml',
         'views/subscription_inspection_report.xml',
