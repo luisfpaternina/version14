@@ -48,6 +48,7 @@
         'views/subscription_reason_change.xml',
         'views/subscription_inspection_report.xml',
         'views/subscription_process.xml',
+        'views/sale_subscription_month_view.xml',
         'views/res_company.xml',
         'views/subscription_stage.xml',
         'templates/welcome_template_subscription.xml',

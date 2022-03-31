@@ -53,6 +53,8 @@ class SaleSuscriptionTemplateInherit(models.Model):
         ('days','Days'),
         ('months','Months'),
         ('years','Years')],string="Contract recurring rule")
+    
+    subscription_month_ids = fields.Many2many('sale.subscription.month')
 
     """
     sale_order_template_id = fields.Many2one(
