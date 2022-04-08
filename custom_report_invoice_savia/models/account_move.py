@@ -30,3 +30,12 @@ class AccountMove(models.Model):
                 lambda x: x.project_id == move.project_id
                 and x.state == 'invoiced'
             )
+
+    @api.onchange('project_id')
+    def domain_bim_masive_chapter_ids(self):
+        for record in self:
+            if record.project_id:
+                return {'domain': {'bim_masive_chapter_ids': [('project_id', '=', record.project_id.id)]}}
+            else:
+                return {'domain': {'bim_masive_chapter_ids': []}}
+
