@@ -39,7 +39,6 @@ class AccountMove(models.Model):
             else:
                 return {'domain': {'bim_masive_chapter_ids': []}}
 
-
     @api.onchange('project_id')
     def domain_bim_masive_certification_ids(self):
         for record in self:
