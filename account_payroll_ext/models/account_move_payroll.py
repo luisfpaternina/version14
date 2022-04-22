@@ -9,7 +9,8 @@ class AccountMovePayroll(models.Model):
     _description = 'Account move payroll'
 
     name = fields.Char(
-        string="Name")
+        string="Name",
+        compute="_concatenate_name")
     employee_id = fields.Many2one(
         'hr.employee',
         string="Employee")
@@ -49,8 +50,8 @@ class AccountMovePayroll(models.Model):
         return result
 
 
-    @api.onchange('code','employee_name','employee_id')
-    def _onchange_concatenate_name(self):
+    @api.depends('code','employee_name','employee_id')
+    def _concatenate_name(self):
        # Concatenar campos
         self.name = "%s %s" % (
             self.code if self.code else "",
