@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-22 14:48+0000\n"
-"PO-Revision-Date: 2022-04-22 14:48+0000\n"
+"POT-Creation-Date: 2022-04-22 15:49+0000\n"
+"PO-Revision-Date: 2022-04-22 15:49+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -38,6 +38,11 @@ msgid "Companies"
 msgstr "Compañías"
 
 #. module: account_payroll_ext
+#: model:ir.model.fields,field_description:account_payroll_ext.field_account_move_payroll__concatenate_name
+msgid "Concatenate"
+msgstr "Concatenación"
+
+#. module: account_payroll_ext
 #: model_terms:ir.actions.act_window,help:account_payroll_ext.action_view_account_move_payroll
 msgid "Create new record"
 msgstr "Crear nuevo registro"
@@ -65,19 +70,29 @@ msgid "Employee"
 msgstr "Empleado"
 
 #. module: account_payroll_ext
+#: model:ir.model.fields,field_description:account_payroll_ext.field_account_move_payroll__employee_name
+msgid "Employee name"
+msgstr "Nombre del empleado"
+
+#. module: account_payroll_ext
 #: model:ir.model.fields,field_description:account_payroll_ext.field_account_move_payroll__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Seguidores"
 
 #. module: account_payroll_ext
 #: model:ir.model.fields,field_description:account_payroll_ext.field_account_move_payroll__message_channel_ids
 msgid "Followers (Channels)"
-msgstr ""
+msgstr "Seguidores del canal/modelo"
 
 #. module: account_payroll_ext
 #: model:ir.model.fields,field_description:account_payroll_ext.field_account_move_payroll__message_partner_ids
 msgid "Followers (Partners)"
 msgstr ""
+
+#. module: account_payroll_ext
+#: model_terms:ir.ui.view,arch_db:account_payroll_ext.view_account_move_payroll_ext_form
+msgid "GENERATE ACCOUNT MOVE"
+msgstr "GENERAR ASIENTOS CONTABLES"
 
 #. module: account_payroll_ext
 #: model_terms:ir.ui.view,arch_db:account_payroll_ext.view_account_move_payroll_ext_search
@@ -146,7 +161,7 @@ msgstr ""
 #. module: account_payroll_ext
 #: model:ir.model.fields,field_description:account_payroll_ext.field_account_move_payroll__message_ids
 msgid "Messages"
-msgstr ""
+msgstr "Mensajes"
 
 #. module: account_payroll_ext
 #: model:ir.model.fields,field_description:account_payroll_ext.field_account_move_payroll__name
