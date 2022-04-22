@@ -32,11 +32,9 @@ class AccountMovePayroll(models.Model):
         ('draft','Draft'),
         ('done','Done')],string="State",default="draft")
     mjs = fields.Char(
-        string="Mjs",
-        compute="_compute_mjs")
+        string="Mjs")
     is_done = fields.Boolean(
-        string="Is done",
-        compute="_compute_mjs")
+        string="Is done")
     date = fields.Date(
         string="Date")
     month = fields.Char(
@@ -50,17 +48,6 @@ class AccountMovePayroll(models.Model):
         for record in self:
             month = now.strftime("%m")
             record.month = month
-
-
-    @api.depends('state')
-    def _compute_mjs(self):
-        for record in self:
-            if record.state == 'done':
-                record.mjs = 'Accounting entries have been created!'
-                record.is_done = True
-            else:
-                record.mjs = ' '
-                record.is_done = False
 
 
     def generate_records_account_move(self):
