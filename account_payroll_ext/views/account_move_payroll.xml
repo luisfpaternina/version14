@@ -55,8 +55,9 @@
                                 <field name="project_id" options="{'no_create': True, 'no_create_edit':True}"/>
                             </group>
                             <group>
-                                 <field name="mjs"/>
-                                 <field name="is_done"/>
+                                 <field name="mjs" invisible="1"/>
+                                 <field name="is_done" invisible="1"/>
+                                 <field name="month"/>
                             </group>
                             <group>
                                 
