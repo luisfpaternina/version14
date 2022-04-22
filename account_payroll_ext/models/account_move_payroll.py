@@ -12,3 +12,6 @@ class AccountMovePayroll(models.Model):
     employee_id = fields.Many2one(
         'hr.employee',
         string="Employee")
+    employee_name = fields.Char(
+        string="Employee name",
+        related="employee_id.name")
