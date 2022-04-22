@@ -36,6 +36,8 @@ class AccountMovePayroll(models.Model):
     is_done = fields.Boolean(
         string="Is done",
         compute="_compute_mjs")
+    date = fields.Date(
+        string="Date")
 
 
     @api.depends('state')
