@@ -30,6 +30,7 @@ class AccountMovePayroll(models.Model):
     state = fields.Selection([
         ('draft','Draft'),
         ('done','Done')],string="State",default="draft")
+    mjs = fields.Char(string="Mjs")
 
 
     def generate_records_account_move(self):
