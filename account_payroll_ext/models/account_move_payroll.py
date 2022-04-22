@@ -33,13 +33,15 @@ class AccountMovePayroll(models.Model):
     mjs = fields.Char(
         string="Mjs",
         compute="_compute_mjs")
+    is_done = fields.Boolean(
+        string="Is done")
 
 
     @api.depends('state')
     def _compute_mjs(self):
         for record in self:
             if record.state == 'done':
-                record.mjs = 'Cccounting entries have been created!'
+                record.mjs = 'Accounting entries have been created!'
             else:
                 record.mjs = ' '
 
