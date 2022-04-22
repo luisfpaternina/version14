@@ -46,6 +46,9 @@
                                 <field name="employee_id" options="{'no_create': True, 'no_create_edit':True}" required="1"/>
                                 <field name="employee_name"/>
                             </group>
+                            <group>
+                                <field name="code"/>
+                            </group>
                         </group>
                     </sheet>
                     <div class="oe_chatter">
