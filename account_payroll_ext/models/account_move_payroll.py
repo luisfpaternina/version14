@@ -36,6 +36,7 @@ class AccountMovePayroll(models.Model):
     # Función generar asientos contables y cambio de estado a hecho
         for record in self:
             record.write({'state': 'done'})
+            record.get_records_attendance()
             print('Testing')
 
 
@@ -56,3 +57,14 @@ class AccountMovePayroll(models.Model):
             record.name = "[%s]%s" % (
                 record.code if record.code else "",
                 record.employee_name if record.employee_name else "")
+
+
+    def get_records_attendance(self):
+        for record in self:
+            attendance_obj = record.env['hr.attendance'].search([
+                ('employee_id', '=', record.employee_id.id),
+                ('project_id', '=', record.project_id.id)])
+            if attendance_obj:
+                print('entro')
+                logging.info('attendance_obj')
+
