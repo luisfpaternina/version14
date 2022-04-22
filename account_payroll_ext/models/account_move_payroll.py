@@ -54,6 +54,6 @@ class AccountMovePayroll(models.Model):
     def _concatenate_name(self):
        # Concatenar campos
        for record in self:
-            record.name = "%s/%s" % (
+            record.name = "[%s]%s" % (
                 record.code if record.code else "",
                 record.employee_name if record.employee_name else "")
