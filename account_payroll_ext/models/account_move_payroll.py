@@ -27,6 +27,9 @@ class AccountMovePayroll(models.Model):
     project_id = fields.Many2one(
         'bim.project',
         string="Project BIM")
+    state = fields.Selection([
+        ('draft','Draft'),
+        ('done','Done')],string="State")
 
 
     @api.onchange('name')
