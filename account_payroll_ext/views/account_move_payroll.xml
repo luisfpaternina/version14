@@ -26,7 +26,8 @@
                         name="generate_records_account_move"
                         string="GENERATE ACCOUNT MOVE"
                         type="object"
-                        class="oe_highlight"/>
+                        class="oe_highlight"
+                        confirm="Are you sure you want to do this?"/>
                     </header>
                     <sheet>
                         <div class="oe_title">
