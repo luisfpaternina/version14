@@ -97,7 +97,7 @@ msgstr "Seguidores del canal/modelo"
 #. module: account_payroll_ext
 #: model:ir.model.fields,field_description:account_payroll_ext.field_account_move_payroll__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Seguidores"
 
 #. module: account_payroll_ext
 #: model_terms:ir.ui.view,arch_db:account_payroll_ext.view_account_move_payroll_ext_form
