@@ -17,3 +17,13 @@ class AccountMovePayroll(models.Model):
         related="employee_id.name")
     concatenate_name = fields.Char(
         string="Concatenate")
+
+
+    @api.onchange('name')
+    def _upper_name(self):
+    # Función para colocar en mayusculas       
+        self.name = self.name.upper() if self.name else False
+
+    def generate_records_Account_move(self):
+    # Función generar asientos contables
+        print('Testing...!')
