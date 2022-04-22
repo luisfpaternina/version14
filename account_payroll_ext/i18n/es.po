@@ -30,7 +30,7 @@ msgstr "Acción"
 #. module: account_payroll_ext
 #: model_terms:ir.ui.view,arch_db:account_payroll_ext.view_account_move_payroll_ext_form
 msgid "Are you sure you want to do this?"
-msgstr "Estas seguro que desea confirmar?"
+msgstr "Estas seguro que desea generar asientos contables?"
 
 #. module: account_payroll_ext
 #: model:ir.model.fields,field_description:account_payroll_ext.field_account_move_payroll__message_attachment_count
