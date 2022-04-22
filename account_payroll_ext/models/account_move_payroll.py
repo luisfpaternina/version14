@@ -33,8 +33,10 @@ class AccountMovePayroll(models.Model):
 
 
     def generate_records_account_move(self):
-    # Función generar asientos contables
-        print('Testing...!')
+    # Función generar asientos contables y cambio de estado a hecho
+        for record in self:
+            record.write({'state': 'done'})
+            print('Testing')
 
 
     @api.model
