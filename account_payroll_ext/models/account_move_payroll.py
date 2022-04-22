@@ -40,10 +40,12 @@ class AccountMovePayroll(models.Model):
     date = fields.Date(
         string="Date")
     month = fields.Char(
-        string="Current month")
+        string="Current month",
+        compute="compute_record_date")
 
 
-    def record_date(self):
+    def compute_record_date(self):
+    # Calcular mes actual
         for record in self:
             month = now.strftime("%m")
             record.month = month
