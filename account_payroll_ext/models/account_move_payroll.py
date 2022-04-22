@@ -15,3 +15,5 @@ class AccountMovePayroll(models.Model):
     employee_name = fields.Char(
         string="Employee name",
         related="employee_id.name")
+    concatenate_name = fields.Char(
+        string="Concatenate")
