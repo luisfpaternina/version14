@@ -17,6 +17,8 @@ class AccountMovePayroll(models.Model):
         related="employee_id.name")
     concatenate_name = fields.Char(
         string="Concatenate")
+    code = fields.Char(
+        string="Code")
 
 
     @api.onchange('name')
