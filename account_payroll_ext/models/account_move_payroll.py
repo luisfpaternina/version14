@@ -32,12 +32,6 @@ class AccountMovePayroll(models.Model):
         ('done','Done')],string="State")
 
 
-    @api.onchange('name')
-    def _upper_name(self):
-    # Función para colocar en mayusculas       
-        self.name = self.name.upper() if self.name else False
-
-
     def generate_records_account_move(self):
     # Función generar asientos contables
         print('Testing...!')
