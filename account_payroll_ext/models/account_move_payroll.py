@@ -51,4 +51,4 @@ class AccountMovePayroll(models.Model):
        # Concatenar campos
         self.name = "%s %s" % (
             self.code if self.code else "",
-            self.employee_name if self.employee_name else ""
+            self.employee_name if self.employee_name else "")
