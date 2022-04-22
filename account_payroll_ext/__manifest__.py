@@ -21,6 +21,7 @@
 
     'data': [
         
+        'data/sequences.xml',
         'security/security.xml',
         'security/ir.model.access.csv',
         'views/account_move_payroll.xml',

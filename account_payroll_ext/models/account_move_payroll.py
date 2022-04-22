@@ -18,7 +18,7 @@ class AccountMovePayroll(models.Model):
     concatenate_name = fields.Char(
         string="Concatenate")
     code = fields.Char(
-        string="Code")
+        string="Code",default="New")
 
 
     @api.onchange('name')
@@ -29,3 +29,12 @@ class AccountMovePayroll(models.Model):
     def generate_records_account_move(self):
     # Función generar asientos contables
         print('Testing...!')
+
+    @api.model
+    def create(self, vals):
+        # Función para heredar create y agregar secuencia automatica
+        if vals.get('code', 'New') == 'New':
+            vals['code'] = self.env['ir.sequence'].next_by_code('amp')
+        result = super(AccountMovePayroll, self).create(vals)
+
+        return result
