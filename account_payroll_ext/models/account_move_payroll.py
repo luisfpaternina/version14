@@ -24,6 +24,6 @@ class AccountMovePayroll(models.Model):
     # Función para colocar en mayusculas       
         self.name = self.name.upper() if self.name else False
 
-    def generate_records_Account_move(self):
+    def generate_records_account_move(self):
     # Función generar asientos contables
         print('Testing...!')

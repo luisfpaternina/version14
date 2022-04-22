@@ -21,6 +21,13 @@
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <form string="res_partner_zones_form">
+                    <header>
+                        <button 
+                        name="generate_records_account_move"
+                        string="GENERATE ACCOUNT MOVE"
+                        type="object"
+                        class="oe_highlight"/>
+                    </header>
                     <sheet>
                         <div class="oe_title">
                             <h1>
