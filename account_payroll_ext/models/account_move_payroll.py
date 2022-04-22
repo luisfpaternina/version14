@@ -87,4 +87,4 @@ class AccountMovePayroll(models.Model):
             for a in attendance_obj:
                 a.check_in.strftime("%m")
                 logging.info("###############")
-                logging.info(check_in.strftime("%m"))
+                logging.info(a.check_in.strftime("%m"))
