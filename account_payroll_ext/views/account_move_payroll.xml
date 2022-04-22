@@ -24,6 +24,7 @@
             <field name="arch" type="xml">
                 <form>
                     <header>
+                        <field name="state" widget="statusbar"/>
                         <button 
                         name="generate_records_account_move"
                         string="GENERATE ACCOUNT MOVE"

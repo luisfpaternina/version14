@@ -29,7 +29,7 @@ class AccountMovePayroll(models.Model):
         string="Project BIM")
     state = fields.Selection([
         ('draft','Draft'),
-        ('done','Done')],string="State")
+        ('done','Done')],string="State",default="draft")
 
 
     def generate_records_account_move(self):
