@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-22 16:33+0000\n"
-"PO-Revision-Date: 2022-04-22 16:33+0000\n"
+"POT-Creation-Date: 2022-04-22 18:06+0000\n"
+"PO-Revision-Date: 2022-04-22 18:06+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -203,6 +203,11 @@ msgstr "Número de errores con mensajes de error en la entrega"
 #: model:ir.model.fields,help:account_payroll_ext.field_account_move_payroll__message_unread_counter
 msgid "Number of unread messages"
 msgstr ""
+
+#. module: account_payroll_ext
+#: model:ir.model.fields,field_description:account_payroll_ext.field_account_move_payroll__project_id
+msgid "Project BIM"
+msgstr "Obra"
 
 #. module: account_payroll_ext
 #: model:ir.model.fields,field_description:account_payroll_ext.field_account_move_payroll__message_has_sms_error
