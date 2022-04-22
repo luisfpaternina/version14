@@ -2,6 +2,7 @@
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 import logging
+from datetime import datetime
 
 class AccountMovePayroll(models.Model):
     _name = 'account.move.payroll'
@@ -38,6 +39,14 @@ class AccountMovePayroll(models.Model):
         compute="_compute_mjs")
     date = fields.Date(
         string="Date")
+    month = fields.Char(
+        string="Current month")
+
+
+    def record_date(self):
+        for record in self:
+            month = now.strftime("%m")
+            record.month = month
 
 
     @api.depends('state')
