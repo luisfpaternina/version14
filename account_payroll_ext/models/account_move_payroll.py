@@ -30,7 +30,18 @@ class AccountMovePayroll(models.Model):
     state = fields.Selection([
         ('draft','Draft'),
         ('done','Done')],string="State",default="draft")
-    mjs = fields.Char(string="Mjs")
+    mjs = fields.Char(
+        string="Mjs",
+        compute="_compute_mjs")
+
+
+    @api.depends('state')
+    def _compute_mjs(self):
+        for record in self:
+            if record.state == 'done':
+                record.mjs = 'Cccounting entries have been created!'
+            else:
+                record.mjs = ' '
 
 
     def generate_records_account_move(self):

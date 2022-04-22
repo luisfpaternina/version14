@@ -54,6 +54,12 @@
                                 <field name="code" invisible="1"/>
                                 <field name="project_id" options="{'no_create': True, 'no_create_edit':True}"/>
                             </group>
+                            <group>
+                                 <field name="mjs"/>
+                            </group>
+                            <group>
+                                
+                            </group>
                         </group>
                     </sheet>
                     <div class="oe_chatter">
