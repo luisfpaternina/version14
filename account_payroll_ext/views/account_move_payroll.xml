@@ -30,7 +30,8 @@
                         string="GENERATE ACCOUNT MOVE"
                         type="object"
                         class="oe_highlight"
-                        confirm="Are you sure you want to do this?"/>
+                        confirm="Are you sure you want to do this?"
+                        attrs="{'invisible': [('state', '!=', 'draft')]}"/>
                     </header>
                     <sheet>
                         <div class="oe_title">
