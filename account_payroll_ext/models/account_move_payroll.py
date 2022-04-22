@@ -46,6 +46,7 @@ class AccountMovePayroll(models.Model):
 
     def compute_record_date(self):
     # Calcular mes actual
+        now = datetime.now() # current date and time
         for record in self:
             month = now.strftime("%m")
             record.month = month
