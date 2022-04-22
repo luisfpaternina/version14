@@ -7,4 +7,8 @@ class AccountMovePayroll(models.Model):
     _inherit = 'mail.thread'
     _description = 'Account move payroll'
 
-    name = fields.Char(string="Name")
+    name = fields.Char(
+        string="Name")
+    employee_id = fields.Many2one(
+        'hr.employee',
+        string="Employee")
