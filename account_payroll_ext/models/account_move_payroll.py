@@ -30,9 +30,11 @@ class AccountMovePayroll(models.Model):
     # Función para colocar en mayusculas       
         self.name = self.name.upper() if self.name else False
 
+
     def generate_records_account_move(self):
     # Función generar asientos contables
         print('Testing...!')
+
 
     @api.model
     def create(self, vals):
@@ -42,3 +44,11 @@ class AccountMovePayroll(models.Model):
         result = super(AccountMovePayroll, self).create(vals)
 
         return result
+
+
+    @api.onchange('code','employee_name','employee_id')
+    def _onchange_concatenate_name(self):
+       # Concatenar campos
+        self.name = "%s %s" % (
+            self.code if self.code else "",
+            self.employee_name if self.employee_name else "",
