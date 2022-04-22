@@ -53,6 +53,7 @@ class AccountMovePayroll(models.Model):
     @api.depends('code','employee_name','employee_id')
     def _concatenate_name(self):
        # Concatenar campos
-        self.name = "%s %s" % (
-            self.code if self.code else "",
-            self.employee_name if self.employee_name else "")
+       for record in self:
+            record.name = "%s %s" % (
+                record.code if record.code else "",
+                record.employee_name if record.employee_name else "")
