@@ -23,6 +23,9 @@ class AccountMovePayroll(models.Model):
         default="New",
         readonly=True,
         copy=False)
+    project_id = fields.Many2one(
+        'bim.project',
+        string="Project BIM")
 
 
     @api.onchange('name')
