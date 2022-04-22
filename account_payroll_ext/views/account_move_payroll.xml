@@ -79,7 +79,7 @@
         <menuitem 
             id="menu_account_move_payroll" 
             name="Account move payroll" 
-            parent="contacts.res_partner_menu_config"
+            parent="account.menu_finance_configuration"
             action="action_view_account_move_payroll"
             />
 
