@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
+import logging
 
 class AccountMovePayroll(models.Model):
     _name = 'account.move.payroll'
@@ -18,7 +19,10 @@ class AccountMovePayroll(models.Model):
     concatenate_name = fields.Char(
         string="Concatenate")
     code = fields.Char(
-        string="Code",default="New")
+        string="Code",
+        default="New",
+        readonly=True,
+        copy=False)
 
 
     @api.onchange('name')
