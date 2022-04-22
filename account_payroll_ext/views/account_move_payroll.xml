@@ -65,7 +65,9 @@
           <field name="model">account.move.payroll</field>                                
           <field name="arch" type="xml">                                    
             <search>
-                <field name="name"/>                                                   
+                <field name="name"/>
+                <field name="code"/>
+                <field name="employee_id"/>                                                  
                 <filter string="name" domain="[('name', '!=', '')]" name="has_name"></filter>
                 <group expand="0" string="Group By">                                            
                     <filter string="Employee" name="employee_id" context="{'group_by': 'employee_id'}"></filter>                                             
