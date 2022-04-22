@@ -23,7 +23,7 @@
         
         'security/security.xml',
         'security/ir.model.access.csv',
-        #'views/res_company.xml',
+        'views/account_move_payroll.xml',
                
     ],
     'installable': True
