@@ -78,11 +78,13 @@ class AccountMovePayroll(models.Model):
 
 
     def get_records_attendance(self):
-        for record in self:
-            attendance_obj = record.env['hr.attendance'].search([
-                ('employee_id', '=', record.employee_id.id),
-                ('project_id', '=', record.project_id.id)])
-            if attendance_obj:
-                print('entro')
-                logging.info(attendance_obj)
-
+        attendance_obj = self.env['hr.attendance'].search([
+            ('employee_id', '=', record.employee_id.id),
+            ('project_id', '=', record.project_id.id)])
+        if attendance_obj:
+            print('entro')
+            logging.info(attendance_obj)
+            for a in attendance_obj:
+                a.check_in
+                logging.info("###############")
+                logging.info(a.check_in)
