@@ -20,7 +20,7 @@ msgstr ""
 #: model:ir.model,name:account_payroll_ext.model_account_move_payroll
 #: model:ir.ui.menu,name:account_payroll_ext.menu_account_move_payroll
 msgid "Account move payroll"
-msgstr ""
+msgstr "Asientos contables de nómina"
 
 #. module: account_payroll_ext
 #: model:ir.model.fields,field_description:account_payroll_ext.field_account_move_payroll__message_needaction
@@ -40,17 +40,17 @@ msgstr "Compañías"
 #. module: account_payroll_ext
 #: model_terms:ir.actions.act_window,help:account_payroll_ext.action_view_account_move_payroll
 msgid "Create new record"
-msgstr ""
+msgstr "Crear nuevo registro"
 
 #. module: account_payroll_ext
 #: model:ir.model.fields,field_description:account_payroll_ext.field_account_move_payroll__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Creado por"
 
 #. module: account_payroll_ext
 #: model:ir.model.fields,field_description:account_payroll_ext.field_account_move_payroll__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Creado en"
 
 #. module: account_payroll_ext
 #: model:ir.model.fields,field_description:account_payroll_ext.field_account_move_payroll__display_name
@@ -62,7 +62,7 @@ msgstr "Nombre mostrado"
 #: model:ir.model.fields,field_description:account_payroll_ext.field_account_move_payroll__employee_id
 #: model_terms:ir.ui.view,arch_db:account_payroll_ext.view_account_move_payroll_ext_search
 msgid "Employee"
-msgstr ""
+msgstr "Empleado"
 
 #. module: account_payroll_ext
 #: model:ir.model.fields,field_description:account_payroll_ext.field_account_move_payroll__message_follower_ids
@@ -82,7 +82,7 @@ msgstr ""
 #. module: account_payroll_ext
 #: model_terms:ir.ui.view,arch_db:account_payroll_ext.view_account_move_payroll_ext_search
 msgid "Group By"
-msgstr ""
+msgstr "Agrupar por"
 
 #. module: account_payroll_ext
 #: model:ir.model.fields,field_description:account_payroll_ext.field_account_move_payroll__id
@@ -116,12 +116,12 @@ msgstr "Última modificación el"
 #. module: account_payroll_ext
 #: model:ir.model.fields,field_description:account_payroll_ext.field_account_move_payroll__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Última actualización por"
 
 #. module: account_payroll_ext
 #: model:ir.model.fields,field_description:account_payroll_ext.field_account_move_payroll__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Última actualización"
 
 #. module: account_payroll_ext
 #: model:ir.model.fields,field_description:account_payroll_ext.field_account_move_payroll__message_main_attachment_id
@@ -131,12 +131,12 @@ msgstr ""
 #. module: account_payroll_ext
 #: model:res.groups,name:account_payroll_ext.account_move_payroll_ext_manager_group
 msgid "Manager account move payroll"
-msgstr ""
+msgstr "Administrador asientos contables de nómina"
 
 #. module: account_payroll_ext
 #: model:res.groups,comment:account_payroll_ext.account_move_payroll_ext_manager_group
 msgid "Manager account move payroll Permission Group"
-msgstr ""
+msgstr "Grupo de permisos asientos contables de nómina"
 
 #. module: account_payroll_ext
 #: model:ir.model.fields,field_description:account_payroll_ext.field_account_move_payroll__message_has_error
@@ -152,7 +152,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:account_payroll_ext.field_account_move_payroll__name
 #: model_terms:ir.ui.view,arch_db:account_payroll_ext.view_account_move_payroll_ext_form
 msgid "Name"
-msgstr ""
+msgstr "Nombre"
 
 #. module: account_payroll_ext
 #: model:ir.model.fields,field_description:account_payroll_ext.field_account_move_payroll__message_needaction_counter
@@ -207,7 +207,7 @@ msgstr ""
 #. module: account_payroll_ext
 #: model_terms:ir.ui.view,arch_db:account_payroll_ext.view_account_move_payroll_ext_search
 msgid "name"
-msgstr ""
+msgstr "Nombre"
 
 #. module: account_payroll_ext
 #: model_terms:ir.ui.view,arch_db:account_payroll_ext.view_account_move_payroll_ext_form
