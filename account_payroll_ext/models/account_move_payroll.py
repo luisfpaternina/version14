@@ -66,5 +66,5 @@ class AccountMovePayroll(models.Model):
                 ('project_id', '=', record.project_id.id)])
             if attendance_obj:
                 print('entro')
-                logging.info('attendance_obj')
+                logging.info(attendance_obj)
 
