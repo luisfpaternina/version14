@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-22 15:49+0000\n"
-"PO-Revision-Date: 2022-04-22 15:49+0000\n"
+"POT-Creation-Date: 2022-04-22 16:00+0000\n"
+"PO-Revision-Date: 2022-04-22 16:00+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -28,9 +28,14 @@ msgid "Action Needed"
 msgstr ""
 
 #. module: account_payroll_ext
+#: model_terms:ir.ui.view,arch_db:account_payroll_ext.view_account_move_payroll_ext_form
+msgid "Are you sure you want to do this?"
+msgstr "Estas seguro que desea confirmar?"
+
+#. module: account_payroll_ext
 #: model:ir.model.fields,field_description:account_payroll_ext.field_account_move_payroll__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "Contador"
 
 #. module: account_payroll_ext
 #: model:ir.model,name:account_payroll_ext.model_res_company
@@ -223,8 +228,3 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:account_payroll_ext.view_account_move_payroll_ext_search
 msgid "name"
 msgstr "Nombre"
-
-#. module: account_payroll_ext
-#: model_terms:ir.ui.view,arch_db:account_payroll_ext.view_account_move_payroll_ext_form
-msgid "res_partner_zones_form"
-msgstr ""
