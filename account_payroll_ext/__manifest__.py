@@ -16,6 +16,7 @@
         'account_accountant',
         'hr',
         'hr_attendance',
+        'bim_project',
     ],
 
     'data': [
