@@ -88,3 +88,14 @@ class AccountMovePayroll(models.Model):
                 a.check_in.strftime("%m")
                 logging.info("###############")
                 logging.info(a.check_in.strftime("%m"))
+
+
+
+
+class AccountMovePayroll(models.Model):
+    _name = 'account.move.payroll.line'
+    _inherit = 'mail.thread'
+    _description = 'Account move payroll lines'
+
+    name = fields.Char(
+        string="Name")
