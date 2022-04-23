@@ -80,6 +80,7 @@ class AccountMovePayroll(models.Model):
                 record.code if record.code else "",
                 record.employee_name if record.employee_name else "")
 
+
     @api.onchange('employee_id')
     def get_records_attendance(self):
         attendance_obj = self.env['hr.attendance'].search([
@@ -94,6 +95,7 @@ class AccountMovePayroll(models.Model):
                         'worked_hours': a.worked_hours
                         })
                     logging.info("writeeeeeeeeeeeeeeeeeee")
+
 
     def send_recors_account_move(self):
         attendance_obj = self.env['hr.attendance'].search([
