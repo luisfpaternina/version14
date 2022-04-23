@@ -62,6 +62,12 @@
                             <group>
                                 
                             </group>
+                            <field name="acc_payroll_line_ids">
+                                <tree>
+                                    <field name="worked_hours"/>
+                                    <field name="cost"/>
+                                </tree>
+                            </field>
                         </group>
                     </sheet>
                     <div class="oe_chatter">
