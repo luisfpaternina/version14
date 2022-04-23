@@ -40,6 +40,10 @@ class AccountMovePayroll(models.Model):
     month = fields.Char(
         string="Current month",
         compute="compute_record_date")
+    acc_payroll_line_ids = fields.One2many(
+        'account.move.payroll.line',
+        'account_payroll_id',
+        string="Lines")
 
 
     def compute_record_date(self):
