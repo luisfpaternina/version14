@@ -88,6 +88,10 @@ class AccountMovePayroll(models.Model):
                 a.check_in.strftime("%m")
                 logging.info("###############")
                 logging.info(a.check_in.strftime("%m"))
+                if a.check_in.strftime("%m") == self.month:
+                    self.is_done = True
+                    logging.info("++++++++ MES ACTUAL ++++++++++")
+
 
 
 
