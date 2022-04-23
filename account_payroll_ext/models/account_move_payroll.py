@@ -99,3 +99,6 @@ class AccountMovePayroll(models.Model):
 
     name = fields.Char(
         string="Name")
+    account_payroll_id = fields.Many2one(
+        'account.move.payroll',
+        string="Account payroll")
