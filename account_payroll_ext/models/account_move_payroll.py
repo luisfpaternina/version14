@@ -96,7 +96,7 @@ class AccountMovePayroll(models.Model):
                     self.is_done = True
                     logging.info("++++++++ MES ACTUAL ++++++++++")
                     obj = self.env['account.move.payroll.line'].create({
-                        'cost': a.cost,
+                        'attendance_cost': a.cost,
                         'worked_hours': a.worked_hours
                         })
 
