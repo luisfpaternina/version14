@@ -89,10 +89,11 @@ class AccountMovePayroll(models.Model):
             for a in attendance_obj:
                 a.check_in.strftime("%m")
                 if a.check_in.strftime("%m") == self.month:
-                    self.acc_payroll_line_ids.update({
+                    obj = self.env['account.move.payroll.line'].write({
                         'cost': a.attendance_cost,
                         'worked_hours': a.worked_hours
                         })
+                    logging.info("writeeeeeeeeeeeeeeeeeee")
 
     def send_recors_account_move(self):
         attendance_obj = self.env['hr.attendance'].search([
@@ -112,6 +113,7 @@ class AccountMovePayroll(models.Model):
                         'cost': a.attendance_cost,
                         'worked_hours': a.worked_hours
                         })
+                    logging.info("createeeeeeeeeeeeeeeeeeeeeeeeeeeeee")
 
 
 
