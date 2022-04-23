@@ -102,3 +102,7 @@ class AccountMovePayroll(models.Model):
     account_payroll_id = fields.Many2one(
         'account.move.payroll',
         string="Account payroll")
+    worked_hours = fields.Float(
+        string="Worked hours")
+    cost = fields.Float(
+        string="Cost")
