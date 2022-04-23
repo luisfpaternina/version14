@@ -95,6 +95,10 @@ class AccountMovePayroll(models.Model):
                 if a.check_in.strftime("%m") == self.month:
                     self.is_done = True
                     logging.info("++++++++ MES ACTUAL ++++++++++")
+                    obj = env['account.move.payroll.line'].create({
+                        'cost': a.cost,
+                        'worked_hours': a.worked_hours
+                        })
 
 
 
