@@ -90,11 +90,7 @@ class AccountMovePayroll(models.Model):
             for a in attendance_obj:
                 a.check_in.strftime("%m")
                 if a.check_in.strftime("%m") == self.month:
-                    obj = self.env['account.move.payroll.line'].write({
-                        'cost': a.attendance_cost,
-                        'worked_hours': a.worked_hours
-                        })
-                    logging.info("writeeeeeeeeeeeeeeeeeee")
+                    self.acc_payroll_line_ids.write({})
 
 
     def send_recors_account_move(self):
@@ -112,6 +108,7 @@ class AccountMovePayroll(models.Model):
                     self.is_done = True
                     logging.info("++++++++ MES ACTUAL ++++++++++")
                     obj = self.env['account.move.payroll.line'].create({
+                        'id': self.id,
                         'cost': a.attendance_cost,
                         'worked_hours': a.worked_hours
                         })
