@@ -96,7 +96,7 @@ class AccountMovePayroll(models.Model):
 
 
 
-class AccountMovePayroll(models.Model):
+class AccountMovePayrollLine(models.Model):
     _name = 'account.move.payroll.line'
     _inherit = 'mail.thread'
     _description = 'Account move payroll lines'
@@ -110,3 +110,6 @@ class AccountMovePayroll(models.Model):
         string="Worked hours")
     cost = fields.Float(
         string="Cost")
+    project_id = fields.Many2one(
+        'bim.project',
+        string="Project BIM")
